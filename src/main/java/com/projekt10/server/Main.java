@@ -24,7 +24,9 @@ public class Main {
 			System.out.println("Not found key.txt, setting to 4 by default");
 			key = 4;
 		}
+
+
+
 		SpringApplication.run(Main.class, args);
 	}
 }
-

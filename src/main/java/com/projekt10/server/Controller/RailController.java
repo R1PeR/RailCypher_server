@@ -8,17 +8,16 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-@Controller
+@RestController
 @RequestMapping("/api/fence")
 public class RailController {
-
+    @CrossOrigin
     @RequestMapping(value = "/encode", method = RequestMethod.POST)
-    @ResponseBody
     public Result encode(@RequestBody EncodeMessage encodeMessage) throws java.lang.Exception{
         return new Result(RailFenceCipher.Encode(encodeMessage.getEncodeMessage(), Main.key));
     }
+    @CrossOrigin
     @RequestMapping(value = "/decode", method = RequestMethod.POST)
-    @ResponseBody
     public Result decode(@RequestBody DecodeMessage decodeMessage) throws java.lang.Exception{
         return new Result(RailFenceCipher.Decode(decodeMessage.getDecodeMessage(), Main.key));
     }
